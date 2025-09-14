@@ -12,3 +12,5 @@ smoothquart.py
 
 
 checkpoints/
+*.wav
+*.mp3
