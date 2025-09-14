@@ -34,7 +34,8 @@ def tts_client():
             start_time = time.time()
             
             # 发送TTS请求
-            response = requests.post(f"{base_url}/tts", json=payload)
+            response = requests.post(f"{base_url}/tts_url", json=payload)
+            # response = requests.post(f"{base_url}/tts", json=payload)
             
             # 计算耗时
             elapsed_time = time.time() - start_time

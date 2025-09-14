@@ -4,7 +4,8 @@ import time
 from subprocess import CalledProcessError
 import traceback
 from typing import List
-
+import pyrootutils
+ROOT = pyrootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)
 import numpy as np
 import sentencepiece as spm
 import torch
@@ -171,10 +172,14 @@ class IndexTTS:
         # print("filtered_latent", filtered_latent.shape)
         return filtered_latent
 
-    async def infer(self, audio_prompt: List[str], text, output_path=None, verbose=False, seed=None):
+    async def infer(self, audio_prompt: List[str]=[], text:str="", output_path=None, verbose=False, seed=None):
         print(">> start inference...")
         start_time = time.perf_counter()
-
+        if not audio_prompt:
+            audio_prompt = [
+                ROOT / "assets/wangrui/0.16kclean.wav",
+                ROOT / "assets/wangrui/0.16kclean.wav"
+            ]
         auto_conditioning = []
         for ap_ in audio_prompt:
             audio, sr = torchaudio.load(ap_)

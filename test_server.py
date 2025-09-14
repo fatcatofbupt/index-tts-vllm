@@ -109,8 +109,8 @@ async def health_check():
 async def tts_api_url(request: Request):
     try:
         data = await request.json()
-        text = data["text"]
-        audio_paths = data["audio_paths"]
+        text = data.get('text',"")
+        audio_paths = data.get("audio_paths", [])
         seed = data.get("seed", 8)
 
         global tts
