@@ -1,6 +1,5 @@
 
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 import pyrootutils
 ROOT = pyrootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)
 import asyncio
@@ -15,18 +14,22 @@ import argparse
 import json
 import asyncio
 import time
+from pathlib import Path
 import numpy as np
 import soundfile as sf
 
 from indextts.infer_vllm import IndexTTS
 
+model_path=Path("/home/tts/.cache/modelscope/hub/models/IndexTeam/IndexTTS-1___5/")
+model_path=Path("/home/tts/.cache/modelscope/hub/IndexTeam/IndexTTS-1.5/")
 tts = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global tts
     gpu_memory_utilization=0.85
-    model_dir=ROOT / "checkpoints/IndexTeam/IndexTTS-1___5"
+    #model_dir=ROOT / "checkpoints/IndexTeam/IndexTTS-1___5"
+    model_dir=model_path
     cfg_path = model_dir / "config.yaml"
     print("Loading TTS model...")
     tts = IndexTTS(
@@ -217,7 +220,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--host", type=str, default="0.0.0.0")
     parser.add_argument("--port", type=int, default=11996)
-    parser.add_argument("--model_dir", type=str, default="/path/to/IndexTeam/Index-TTS")
+    #parser.add_argument("--model_dir", type=str, default="/path/to/IndexTeam/Index-TTS")
+    parser.add_argument("--model_dir", type=str, default=model_path)
     parser.add_argument("--gpu_memory_utilization", type=float, default=0.25)
     args = parser.parse_args()
 

@@ -14,6 +14,8 @@ SUPPORT_URL="https://help.ubuntu.com/"
 BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 UBUNTU_CODENAME=jammy
+
+
 $nvidia-smi
 Sun Sep 14 23:05:21 2025       
 +-----------------------------------------------------------------------------------------+
@@ -35,6 +37,8 @@ Sun Sep 14 23:05:21 2025
 |=========================================================================================|
 |    0   N/A  N/A          299381      C   python                                31574MiB |
 +-----------------------------------------------------------------------------------------+
+
+
 $ sudo dpkg -l |grep nvidia
 ii  libnvidia-container-tools              1.13.5-1                                amd64        NVIDIA container runtime library (command-line tools)
 ii  libnvidia-container1:amd64             1.13.5-1                                amd64        NVIDIA container runtime library

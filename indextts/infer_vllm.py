@@ -13,7 +13,7 @@ import torchaudio
 from torch.nn.utils.rnn import pad_sequence
 from omegaconf import OmegaConf
 from tqdm import tqdm
-
+from loguru import logger
 import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -108,6 +108,9 @@ class IndexTTS:
         # else:
         #     self.gpt.eval()
         self.gpt.eval()
+        
+        self.gpt.sampling_params.best_of = 1  # 减少候选数
+        self.gpt.sampling_params.beam_width = 1  # 关闭beam search
         print(">> GPT weights restored from:", self.gpt_path)
 
         if self.use_cuda_kernel:
@@ -291,12 +294,13 @@ class IndexTTS:
 
         text_tokens_list = self.tokenizer.tokenize(text)
         sentences = self.tokenizer.split_sentences(text_tokens_list)
+        logger.debug(f"text:{text}, after split_sentences:{sentences}")
         wavs = []
         gpt_gen_time = 0
         bigvgan_time = 0
 
         speech_conditioning_latent = self.speaker_dict[speaker]["speech_conditioning_latent"]
-
+        
         for sent in sentences:
             text_tokens = self.tokenizer.convert_tokens_to_ids(sent)
             text_tokens = torch.tensor(text_tokens, dtype=torch.int32, device=self.device).unsqueeze(0)

@@ -1,34 +1,14 @@
 {
     "67a0410a81974dbb94a51c211aee2499": [
-        "assets/67a0410a81974dbb94a51c211aee2499/7.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/1.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/5.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/8.16kclean.wav",
         "assets/67a0410a81974dbb94a51c211aee2499/0.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/6.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/3.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/4.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/9.16kclean.wav",
+        "assets/67a0410a81974dbb94a51c211aee2499/1.16kclean.wav",
         "assets/67a0410a81974dbb94a51c211aee2499/2.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/7.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/1.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/5.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/8.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/0.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/6.16kclean.wav",
         "assets/67a0410a81974dbb94a51c211aee2499/3.16kclean.wav",
         "assets/67a0410a81974dbb94a51c211aee2499/4.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/9.16kclean.wav",
-        "assets/67a0410a81974dbb94a51c211aee2499/2.16kclean.wav"
-    ],
-    "jay_klee": [
-        "assets/jay_klee/vo_card_klee_endOfGame_fail_01.wav",
-        "assets/jay_klee/jay_promptvn.wav",
-        "assets/jay_klee/vo_card_klee_endOfGame_fail_01.wav",
-        "assets/jay_klee/jay_promptvn.wav"
-    ],
-    "wangrui": [
-        "assets/wangrui/0.16kclean.wav",
-        "assets/wangrui/0.16kclean.wav"
+        "assets/67a0410a81974dbb94a51c211aee2499/5.16kclean.wav",
+        "assets/67a0410a81974dbb94a51c211aee2499/6.16kclean.wav",
+        "assets/67a0410a81974dbb94a51c211aee2499/7.16kclean.wav",
+        "assets/67a0410a81974dbb94a51c211aee2499/8.16kclean.wav",
+        "assets/67a0410a81974dbb94a51c211aee2499/9.16kclean.wav"
     ]
 }

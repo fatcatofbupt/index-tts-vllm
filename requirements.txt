@@ -17,5 +17,6 @@ librosa
 gradio
 ninja
 
-WeTextProcessing; platform_machine != "Darwin"
-wetext; platform_system == "Darwin"
+WeTextProcessing
+#WeTextProcessing; platform_machine != "Darwin"
+#wetext; platform_system == "Darwin"
