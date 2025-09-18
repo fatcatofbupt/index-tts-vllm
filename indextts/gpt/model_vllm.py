@@ -133,9 +133,17 @@ class UnifiedVoice(nn.Module):
         engine_args = AsyncEngineArgs(
             model=vllm_dir,
             tensor_parallel_size=1,
-            dtype="auto",
+            # dtype="auto,
+            dtype="half",
             gpu_memory_utilization=gpu_memory_utilization,
             # enforce_eager=True,
+
+            # max_num_seqs=32,              # 降低并发数以减少延迟波动
+            # max_num_batched_tokens=2048,  # TTS序列通常较短
+            
+            # # 启用性能优化
+            # enable_prefix_caching=True,
+            # disable_log_stats=True,
         )
         self.llm = AsyncLLMEngine.from_engine_args(engine_args)
         self.sampling_params = SamplingParams(
@@ -143,7 +151,8 @@ class UnifiedVoice(nn.Module):
             top_p=0.8,
             top_k=30,  # 5, 30
             repetition_penalty=10.0,  # 8.0
-            max_tokens=768,  # 605
+            # max_tokens=768,  # 605
+            max_tokens=300,  # 605
         )
 
     def build_aligned_inputs_and_targets(self, input, start_token, stop_token):

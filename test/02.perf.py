@@ -124,8 +124,8 @@ async def performance_test_client():
     speaker = "67a0410a81974dbb94a51c211aee2499"  # 根据实际可用角色名修改
     input_file = "lines.txt"
     output_dir = "tts_100_rounds_test_output"
-    concurrency_level = 10  # 每轮并发数
-    total_rounds = 100  # 总轮数
+    concurrency_level = 10 # 每轮并发数
+    total_rounds = 10  # 总轮数
     
     # 创建输出目录
     Path(output_dir).mkdir(exist_ok=True)

@@ -27,7 +27,7 @@ tts = None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global tts
-    gpu_memory_utilization=0.85
+    gpu_memory_utilization=0.5
     #model_dir=ROOT / "checkpoints/IndexTeam/IndexTTS-1___5"
     model_dir=model_path
     cfg_path = model_dir / "config.yaml"
